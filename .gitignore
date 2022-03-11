@@ -1,0 +1,10 @@
+src/Chicken_Azure.Api/obj/
+src/Chicken_Azure.Infrastructure/obj/
+src/Chicken_Azure.Infrastructure/bin/
+src/Chicken_Azure.Core/obj/
+src/Chicken_Azure.Core/bin/
+src/Chicken_Azure.Common/obj/
+src/Chicken_Azure.Common.Mongo/obj/
+src/Chicken_Azure.Common/bin/
+src/Chicken_Azure.Api/bin/
+src/Chicken_Azure.Common.Mongo/bin/

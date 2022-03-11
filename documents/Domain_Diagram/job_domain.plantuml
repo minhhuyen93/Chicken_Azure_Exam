@@ -1,0 +1,51 @@
+# PlantUML Editor
+# Authors:
+# Huyen Minh Nguyen (Fresher Developer)
+
+@startuml JobDomainModel
+
+package Job {
+    left to right direction
+    class Address {
+        City: string
+        CountryCode: string
+        PostalCode: string
+        AddressLine1: string
+        AddressLine2: string
+    }
+
+    Address --> Job
+    
+    class Skill {
+        Title: string
+        Language: string
+        Description: string
+    }
+
+    Skill }-- Job
+
+    class Experience {
+        ProjectName: string
+        Duration: string
+        Description: string
+        Responsibility: string
+    }
+    Experience }-- Job
+
+    enum JobType {
+        FullTime
+        PartTime
+        Remote
+    }
+    JobType --> Job
+
+    class Job {
+        Title : string
+        Description: string
+        CompanyName: string
+        Type: enum
+        Skills: IList<Skill>
+        Experiences: IList<Experience>
+    }
+}
+@enduml

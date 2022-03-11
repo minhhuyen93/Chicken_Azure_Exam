@@ -1,18 +1,16 @@
 namespace Chicken_Azure.Api
 {
+    using Chicken_Azure.Api.Dtos.Converters;
+    using Chicken_Azure.Common.Mongo;
+    using Chicken_Azure.Common.Mongo.Configurations;
+    using Chicken_Azure.Core.Application;
+    using Chicken_Azure.Core.Domain.Repositories;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.HttpsPolicy;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using Microsoft.Extensions.Logging;
     using Microsoft.OpenApi.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     public class Startup
     {
@@ -26,12 +24,20 @@ namespace Chicken_Azure.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<MongoConfigurationOptions>(Configuration.GetSection(MongoConfigurationOptions.DefaultConfiguration));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Chicken_Azure.Api", Version = "v1" });
             });
+
+            services.MongoRegistrations();
+
+            services.AddSingleton<IJobService, JobService>()
+                .AddSingleton<IJobRepository, JobRepository>();
+
+            services.AddScoped<IJobConverter, JobConverter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,3 +8,25 @@ src/Chicken_Azure.Common.Mongo/obj/
 src/Chicken_Azure.Common/bin/
 src/Chicken_Azure.Api/bin/
 src/Chicken_Azure.Common.Mongo/bin/
+
+# dependencies
+/chicken_azure_exam_spa/node_modules
+/chicken_azure_exam_spa/.pnp
+/chicken_azure_exam_spa/.pnp.js
+
+# testing
+/chicken_azure_exam_spa/coverage
+
+# production
+/chicken_azure_exam_spa/build
+
+# misc
+/chicken_azure_exam_spa/.DS_Store
+/chicken_azure_exam_spa/.env.local
+/chicken_azure_exam_spa/.env.development.local
+/chicken_azure_exam_spa/.env.test.local
+/chicken_azure_exam_spa/.env.production.local
+
+/chicken_azure_exam_spa/npm-debug.log*
+/chicken_azure_exam_spa/yarn-debug.log*
+/chicken_azure_exam_spa/yarn-error.log*

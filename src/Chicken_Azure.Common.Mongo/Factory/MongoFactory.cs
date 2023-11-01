@@ -25,7 +25,7 @@
             var builder = new StringBuilder();
             builder.Append($"{options.Protocol}://");
 
-            var host = $"{options.HostName}:{options.Port}";
+            var host = $"{options.Hosts}:{options.Port}";
             builder.Append($"{host}/");
 
             if (!string.IsNullOrEmpty(options.DatabaseName))

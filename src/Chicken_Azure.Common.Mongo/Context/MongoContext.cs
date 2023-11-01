@@ -19,12 +19,11 @@
             _options = options.Value;
         }
 
-        public IMongoClient GetClient()
+        public IMongoCollection<T> GetMongoCollection<T>(string collectionName = null)
         {
-            if (_client != null) { return _client; }
+            var db = GetDatabase();
 
-            _client = _mongoFactory.CreateClient(_options);
-            return _client;
+            return db.GetCollection<T>(collectionName);
         }
 
         public IMongoDatabase GetDatabase()
@@ -36,11 +35,12 @@
             return _database;
         }
 
-        public IMongoCollection<T> GetMongoCollection<T>(string collectionName = null)
+        private IMongoClient GetClient()
         {
-            var db = GetDatabase();
+            if (_client != null) { return _client; }
 
-            return db.GetCollection<T>(collectionName);
+            _client = _mongoFactory.CreateClient(_options);
+            return _client;
         }
     }
 }

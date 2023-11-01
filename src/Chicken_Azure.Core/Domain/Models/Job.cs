@@ -12,6 +12,8 @@
 
         [BsonElement("description")]
         public string Description { get; set; }
+        [BsonElement("location")]
+        public string Location { get; set; }
 
         [BsonElement("companyName")]
         public string CompanyName { get; set; }

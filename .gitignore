@@ -8,3 +8,4 @@ src/Chicken_Azure.Common.Mongo/obj/
 src/Chicken_Azure.Common/bin/
 src/Chicken_Azure.Api/bin/
 src/Chicken_Azure.Common.Mongo/bin/
+src/.vs/

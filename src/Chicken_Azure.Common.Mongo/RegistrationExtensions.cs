@@ -10,8 +10,7 @@
         {
             services
                 .AddSingleton<IMongoContext, MongoContext>()
-                .AddSingleton<IMongoFactory, MongoFactory>()
-                ;
+                .AddSingleton<IMongoFactory, MongoFactory>();
             return services;
         }
     }
